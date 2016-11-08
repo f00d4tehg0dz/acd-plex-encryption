@@ -3,5 +3,5 @@
 # Ideally encfs6.xml should have been moved from setup.sh
 acd_cli sync
 acd_cli upload -x 4 --exclude-ending encfs6.xml \
-$ACD_LOCAL/.local-sorted/* \
+$ACD_PLEX/.local-sorted/* \
 /Encrypted/
