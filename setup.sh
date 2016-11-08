@@ -19,4 +19,5 @@ mv $ACD_PLEX/.local-sorted/.encfs6.xml $ACD_PLEX/encfs6.xml
 
 sudo ENCFS6_CONFIG='$ACD_PLEX/encfs.xml' encfs -o allow_other $ACD_PLEX/.acd-sorted $ACD_PLEX/acd-sorted
 
-
+# If plex doesn't recognize your folders after Sync. Give the folder the same useraccount you used for PLEX and setting up your environment.
+sudo chown -R $USER $ACD_PLEX
