@@ -7,12 +7,13 @@ mkdir -p $ACD_PLEX/.local-sorted $ACD_PLEX/local-sorted $ACD_PLEX/.acd-sorted $A
 encfs $ACD_PLEX/.local-sorted $ACD_PLEX/local-sorted
 
 # Mount drive
+
 acd_cli mount $ACD_PLEX/.acd-sorted/
 
 # Backup key & configuration for safe-keeping
 # TODO: this shouldn't be in ~/.local-sorted cache/
 
-ln $ACD_PLEX/.local-sorted/.encfs6.xml $ACD_PLEX/encfs6.xml
+mv $ACD_PLEX/.local-sorted/.encfs6.xml $ACD_PLEX/encfs6.xml
 
 # Link Drive paths, and allow other in case you runinto issues with Plex not reading acd-sorted
 
