@@ -9,7 +9,7 @@ encfs $ACD_PLEX/.local-sorted $ACD_PLEX/local-sorted
 fusermount -u $ACD_PLEX/local-sorted
 
 # Mount with ENCFS configured
-ENCFS6_CONFIG='/home/owner/Plex/encfs.xml' encfs $ACD_PLEX/.local-sorted $ACD_PLEX/local-sorted
+ENCFS6_CONFIG='$ACD_PLEX/encfs.xml' encfs $ACD_PLEX/.local-sorted $ACD_PLEX/local-sorted
 
 # Mount drive
 acd_cli mount $ACD_PLEX/.acd-sorted/
