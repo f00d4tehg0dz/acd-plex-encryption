@@ -1,0 +1,1 @@
+export ACD_PLEX=$HOME/Plex/
