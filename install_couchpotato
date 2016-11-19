@@ -1,0 +1,33 @@
+sudo apt-get update
+sudo apt-get install git-core libffi-dev libssl-dev zlib1g-dev libxslt1-dev libxml2-dev python python-pip python-dev build-essential -y
+sudo pip install lxml cryptography pyopenssl
+sudo git clone https://github.com/RuudBurger/CouchPotatoServer /opt/couchpotato
+sudo chown -R <yourusername>:<youusername> /opt/couchpotato
+
+#test it
+python /opt/couchpotato/CouchPotato.py --daemon
+
+sudo cp /opt/couchpotato/init/ubuntu.default /etc/default/couchpotato
+sudo nano /etc/default/couchpotato
+# COPY THIS FILE TO /etc/default/couchpotato 
+CP_HOME=/opt/couchpotato
+CP_DATA=/opt/couchpotato
+CP_USER=<youusername>
+CP_PIDFILE=/home/<yourusername>/.couchpotato.pid
+CP_OPTS=--daemon
+
+sudo cp /opt/couchpotato/init/ubuntu /etc/init.d/couchpotato
+sudo chmod +x /etc/init.d/couchpotato
+sudo update-rc.d couchpotato defaults
+
+http://localhost:5050
+
+#Start n Stop
+sudo service couchpotato stop
+sudo service couchpotato start
+
+#Update CouchPotato
+cd /opt/couchpotato
+#pull update
+git pull
+
